@@ -1,0 +1,25 @@
+name: Python Script Workflow
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 1 * *' # Runs every month at 8:00
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'  # Specify the Python version
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt  # Assuming you have a requirements.txt file
+
+    - name: Run script
+      run: python scripts/job_01.py  # Replace with your script path
