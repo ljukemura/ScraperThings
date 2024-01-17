@@ -1,5 +1,7 @@
 import _utils
 import pandas as pd
+from datetime import datetime
+import numpy as np
 
 # Parâmetros
 url_api = r'https://api-middleware-mcd.mcdonaldscupones.com/api/restaurant/list'
@@ -19,20 +21,36 @@ headers_api = {
     'x-app-country': 'BR',
 }
 caminho_raw = r'D:\Github\Scrapers\data\raw\id_01\\'
+caminho_siver = r'D:\Github\Scrapers\data\silver\id_01\\'
+nome_arquivo = 'mcdonalds'
 
 # parte 1 - Extrair e salvar dados brutos (E - ETL / camada raw)
 dados_api = _utils.buscar_dados_api(url_api, headers_api)
-arquivo_raw = _utils.salvar_dados_json(dados_api, caminho_raw, nome_arquivo='mcdonalds')
+arquivo_raw = _utils.salvar_dados_json(dados_api, caminho_raw, nome_arquivo)
 
 # parte 2 - Tranformar dados para utilização (T - ETL)
 with open(arquivo_raw, 'r', encoding='utf-8') as file:
     data = pd.read_json(file)
 
-df = pd.json_normalize(data['data'])
+df_novo = pd.json_normalize(data['data'])
+df_existente = pd.read_csv(f'{caminho_siver}{nome_arquivo}.csv')
+
+df_merged = pd.merge(df_existente, df_novo, how='outer', on='_id', indicator=True)
+
+df_merged['scrapper_updated_at'] = datetime.now() # Preenche com a data atual
+condicoes = [
+    (df_merged['_merge'] == 'right_only'), # Dados novos
+    (df_merged['_merge'] == 'left_only'),  # Dados apagados
+    (df_merged['_merge'] == 'both')        # Dados existentes
+]
+
+valores = ['new', 'deleted', 'ok']
+df_merged['scrapper_updated'] = np.select(condicoes, valores)
+df_merged.drop(['_merge'], axis=1, inplace=True)
+
 
 # parte 3 - Disponibilizar tabela trata (L - ETL / camada silver)
-
-df.to_csv(r'D:\Github\Scrapers\data\silver\id_01\mcdonalds_2024_01_15.csv', index=False)
+df_merged.to_csv(f'{caminho_siver}{nome_arquivo}.csv', index=False)
 
 
 
