@@ -9,7 +9,7 @@ ScraperThings é uma coleção de scripts em Python dedicados a coletar dados vi
 3. Execute os scripts desejados para iniciar a coleta de dados.
 
 ## Scripts criados
-- `McDonalds`: Coleta de locais e informações dos restaurantes do McDonalds Brasil [link](https://www.mcdonalds.com.br/restaurantes). 
+1. `McDonalds`: Coleta de locais e informações dos restaurantes do McDonalds Brasil [link](https://www.mcdonalds.com.br/restaurantes). 
 
 
 ## Estrutura de dados
