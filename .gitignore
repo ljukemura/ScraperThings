@@ -2,7 +2,7 @@
 \__pycache__
 /amb_scraper/
 /data/raw/id_01/mcdonalds_2024_01_16.json
-/data/raw/id_01/mcdonalds_2024_01_17.json
+
 #arquivos para não publicar
 testes.py
 /data/silver/id_01/mcdonalds.csv
