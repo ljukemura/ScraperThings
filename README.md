@@ -1,16 +1,17 @@
-# Scrapers
+# ScraperThings
 
 ## Descrição
-Este repositório contém uma série de projetos de Web Scraping desenvolvidos em Python. Cada projeto é focado em extrair dados específicos de diferentes fontes da web.
+ScraperThings é uma coleção de scripts em Python dedicados a coletar dados via web scraping e web crawling. Este repositório contém exemplos práticos aplicados a diferentes fontes de dados.
 
-## Instalação
-Instruções sobre como configurar e executar os projetos.
+## Como usar
+1. Clone o repositório para sua máquina local.
+2. Instale as dependências listadas no arquivo `requirements.txt`. Não são necessárias instalações adicionais.
+3. Execute os scripts desejados para iniciar a coleta de dados.
 
-## Uso
-Detalhes sobre como usar cada script de scraping, incluindo exemplos de código e descrições das funções.
+## Scripts criados
+- `McDonalds`: Coleta de locais e informações dos restaurantes do McDonalds Brasil [link](https://www.mcdonalds.com.br/restaurantes). 
 
-## Contribuição
-Como contribuir para o projeto.
 
-## Licença
-Este projeto está sob a licença MIT.
+## Estrutura de dados
+- `/data/raw`: Contém arquivos brutos coletados diretamente das fontes.
+- `/data/silver`: Informação dos dataset trabalhados. Para acesso aos dados mandar mensagem no [linkedin](https://www.linkedin.com/in/leandro-jukemura/).
