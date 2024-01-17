@@ -1,7 +1,9 @@
 import _utils
 import pandas as pd
-from datetime import datetime
-import numpy as np
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+
 
 # Parâmetros
 url_api = r'https://api-middleware-mcd.mcdonaldscupones.com/api/restaurant/list'
