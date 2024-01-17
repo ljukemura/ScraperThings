@@ -37,5 +37,6 @@ df = pd.json_normalize(data['data'])
 # parte 3 - Disponibilizar tabela trata (L - ETL / camada silver)
 df.to_csv(f'{caminho_siver}{nome_arquivo}.csv', index=False)
 
+df.head().to_csv(f'{caminho_siver}{nome_arquivo}_head.csv', index=False)
 
 

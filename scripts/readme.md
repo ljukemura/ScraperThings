@@ -1,4 +1,6 @@
 # Scrapers 
 
-## id 01 = McDonalds
-Fazer um scraper do Mcdonalds, poara trazer todos os restaurantes e cada feature de cada
+## id 01 = McDonalds 🍔
+🎯 Fazer um scraper do Mcdonalds, para trazer todos os restaurantes e as features apersentadas no site
+🕸 https://www.mcdonalds.com.br/restaurantes
+
