@@ -20,8 +20,8 @@ headers_api = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     'x-app-country': 'BR',
 }
-caminho_raw = r'D:\Github\Scrapers\data\raw\id_01\\'
-caminho_siver = r'D:\Github\Scrapers\data\silver\id_01\\'
+caminho_raw = '../data/raw/id_01/'
+caminho_silver = '../data/silver/id_01/'
 nome_arquivo = 'mcdonalds'
 
 # parte 1 - Extrair e salvar dados brutos (E - ETL / camada raw)
