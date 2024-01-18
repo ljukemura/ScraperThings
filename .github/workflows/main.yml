@@ -3,7 +3,7 @@ name: Run_id_01
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 8 1 * *' # Runs every month at 8:00
+    - cron: '0 8 18 * *' # Runs every month at 8:00
 
 jobs:
   run-python-script:
