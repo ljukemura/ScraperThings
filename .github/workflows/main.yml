@@ -26,10 +26,7 @@ jobs:
 
 
     - name: Kaggle Authentication
-          env:
-            KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
-            KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
-          run: |
-            mkdir ~/.kaggle
-            echo "{\"username\":\"${KAGGLE_USERNAME}\",\"key\":\"${KAGGLE_KEY}\"}" > ~/.kaggle/kaggle.json
-            chmod 600 ~/.kaggle/kaggle.json
+      run: |
+        mkdir ~/.kaggle
+        echo "{\"username\":\"${KAGGLE_USERNAME}\",\"key\":\"${KAGGLE_KEY}\"}" > ~/.kaggle/kaggle.json
+        chmod 600 ~/.kaggle/kaggle.json
