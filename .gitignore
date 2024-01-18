@@ -1,8 +1,11 @@
 #pastas para não publicar
 \__pycache__
 /amb_scraper/
-/data/raw/id_01/mcdonalds_2024_01_16.json
+/data/raw/id_01/*
 
 #arquivos para não publicar
 testes.py
 /data/silver/id_01/mcdonalds.csv
+
+# Exceto o arquivo 'arquivo_importante.txt'
+!/data/raw/id_01/doc.md
