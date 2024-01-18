@@ -30,15 +30,24 @@ nome_arquivo = 'mcdonalds'
 dados_api = _utils.buscar_dados_api(url_api, headers_api)
 arquivo_raw = _utils.salvar_dados_json(dados_api, caminho_raw, nome_arquivo)
 
-# parte 2 - Tranformar dados para utilização (T - ETL)
-with open(arquivo_raw, 'r', encoding='utf-8') as file:
-    data = pd.read_json(file)
+# parte 2 - Transformar dados para utilização (T - ETL)
+try:
+    df = pd.json_normalize(arquivo_raw['data'])
+    logging.info("Transformação dos dados JSON concluída com sucesso.")
+except Exception as e:
+    logging.error(f"Erro ao processar dados JSON: {e}")
 
-df = pd.json_normalize(data['data'])
+# parte 3 - Disponibilizar tabela tratada (L - ETL / camada silver)
+try:
+    logging.info(f"Salvando datasets")
+    csv_path = f'{caminho_siver}{nome_arquivo}.csv'
+    df.to_csv(csv_path, index=False)
+    logging.info(f"Dados salvos em CSV com sucesso. {csv_path}")
 
-# parte 3 - Disponibilizar tabela trata (L - ETL / camada silver)
-df.to_csv(f'{caminho_siver}{nome_arquivo}.csv', index=False)
-
-df.head().to_csv(f'{caminho_siver}{nome_arquivo}_head.csv', index=False)
+    csv_head_path = f'{caminho_siver}{nome_arquivo}_head.csv'
+    df.head().to_csv(csv_head_path, index=False)
+    logging.info(f"Primeiras linhas salvas em CSV com sucesso. {csv_head_path}")
+except Exception as e:
+    logging.error(f"Erro ao salvar arquivos CSV: {e}")
 
 
