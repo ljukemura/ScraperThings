@@ -30,6 +30,9 @@ jobs:
         mkdir ~/.kaggle
         echo "{\"username\":\"${KAGGLE_USERNAME}\",\"key\":\"${KAGGLE_KEY}\"}" > ~/.kaggle/kaggle.json
         chmod 600 ~/.kaggle/kaggle.json
+      
+    - name: Check Kaggle Config File
+      run: cat ~/.kaggle/kaggle.json
         
     - name: Test Kaggle Authentication
       run: |
