@@ -34,9 +34,9 @@ jobs:
 
     - name: Update Kaggle Dataset
       run: |
-        dataset_path="${{ steps.roda_job.outputs.caminho_silver }}"
+        dataset_path="./data/silver/id_01/}"
         current_date=$(date +'%Y-%m-%d')
         update_message='Atualização do dataset: ${current_date}' 
-        update_command="kaggle datasets version -p ${dataset_path} -m "Atualização do dataset 2024_01_21"" 
+        update_command="kaggle datasets version -p ${dataset_path} -m ${update_message}" 
         echo "Executando o comando: $update_command"
         $update_command
