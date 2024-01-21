@@ -2,7 +2,6 @@
 \__pycache__
 /amb_scraper/
 /data/raw/id_01/*
-/data/silver/id_01/*
 /secrets/*
 
 #arquivos para não publicar
@@ -11,4 +10,3 @@ testes.py
 
 # Arquivos para publicar em pastas ignoradas
 !/data/raw/id_01/doc.md
-!/data/silver/id_01/doc.md
