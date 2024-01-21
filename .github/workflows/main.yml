@@ -24,11 +24,11 @@ jobs:
     - name: Run script
       run: python scripts/job_01.py  --verbose 
 
-
+    
     - name: Kaggle Authentication
       run: |
-        mkdir ~/.kaggle
-        echo "{\"username\":\"${KAGGLE_USERNAME}\",\"key\":\"${KAGGLE_KEY}\"}" > ~/.kaggle/kaggle.json
+        mkdir -p ~/.kaggle
+        echo "{\"username\":\"${{ secrets.KAGGLE_USERNAME }}\",\"key\":\"${{ secrets.KAGGLE_KEY }}\"}" > ~/.kaggle/kaggle.json
         chmod 600 ~/.kaggle/kaggle.json
       
     - name: Print Environment Variables
