@@ -43,7 +43,6 @@ try:
     csv_path = f'{caminho_silver}{nome_arquivo}.csv'
     df.to_csv(csv_path, index=False)
     logging.info(f"Dados salvos em CSV com sucesso. {csv_path}")
-    print(f"::set-output name=caminho_silver::{caminho_silver}")
 
 except Exception as e:
     logging.error(f"Erro ao salvar arquivos CSV: {e}")
