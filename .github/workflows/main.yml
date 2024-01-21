@@ -28,13 +28,8 @@ jobs:
     - name: Kaggle Authentication
       run: |
         mkdir -p ~/.kaggle
-        echo "{\"username\":\"${{ secrets.KAGGLE_USERNAME }}\",\"key\":\"${{ secrets.KAGGLE_KEY }}\"}" > ~/.kaggle/kaggle.json
+        echo "${{ secrets.KAGGLE_JSON }}" > ~/.kaggle/kaggle.json
         chmod 600 ~/.kaggle/kaggle.json
-      
-    - name: Print Environment Variables
-      run: |
-        echo "Username: ${{ secrets.KAGGLE_USERNAME }}"
-        echo "Key: ${{ secrets.KAGGLE_KEY }}"
 
     - name: Check Kaggle Config File
       run: cat ~/.kaggle/kaggle.json
