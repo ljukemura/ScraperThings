@@ -1,7 +1,7 @@
 
 # Documentação dos dados do McDonald's Brasil.
 
-Este documento fornece uma documentação da tabela gerada, aqui possuimos tanto informações de localizações do McDonald's, quanto produtos e serviços ofertados e horparios de funcionamento.
+Este é apenas o esqueleto da tabela criada. Para acessar os dados vá nesse [link](https://www.kaggle.com/datasets/ljukemura/restaurates-mcdonalds-br).
 
 ## Descrição das Colunas
 
@@ -44,7 +44,3 @@ Este documento fornece uma documentação da tabela gerada, aqui possuimos tanto
 - `services.dessertCenter` (object): -
 - `services.shoppingCenter` (object): -
 - `generalHour.daysOfWeek` (object): Informações sobre os horários de funcionamento nos diferentes dias da semana.
-
-## Informação Adicional
-
-Os dados completos e atualizados sobre estas localizações do McDonald's estão disponíveis em um conjunto de dados privado no Kaggle. 
