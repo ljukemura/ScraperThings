@@ -22,6 +22,7 @@ jobs:
         pip install -r requirements.txt  --verbose file
 
     - name: Run script
+      id: roda_job
       run: python scripts/job_01.py  --verbose 
 
     
@@ -33,7 +34,7 @@ jobs:
 
     - name: Update Kaggle Dataset
       run: |
-        dataset_path="${{ steps.define_vars.outputs.caminho_silver }}"
+        dataset_path="${{ steps.roda_job.outputs.caminho_silver }}"
         current_date=$(date +'%Y-%m-%d')
         update_message="Atualização do dataset: ${current_date}" 
         update_command="kaggle datasets version -p ${dataset_path} -m \"${update_message}\"" 
