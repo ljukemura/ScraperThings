@@ -40,7 +40,7 @@ except Exception as e:
 # parte 3 - Disponibilizar tabela tratada (L - ETL / camada silver)
 try:
     logging.info(f"Salvando datasets")
-    csv_path = f'{caminho_siver}kaggle_update\\{nome_arquivo}.csv'
+    csv_path = f'{caminho_siver}{nome_arquivo}.csv'
     df.to_csv(csv_path, index=False)
     logging.info(f"Dados salvos em CSV com sucesso. {csv_path}")
     print(f"::set-output name=caminho_silver::{caminho_silver}")
