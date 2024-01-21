@@ -35,8 +35,6 @@ jobs:
     - name: Update Kaggle Dataset
       run: |
         dataset_path="./data/silver/id_01/"
-        current_date=$(date +'%Y_%m_%d')
-        echo "Atualização do dataset: ${current_date}" > message.txt
-        update_command="kaggle datasets version -p ${dataset_path} -m message.txt" 
+        update_command="kaggle datasets version -p ${dataset_path} -m 'Atualização schedulada proj. ScraperThings" 
         echo "Executando o comando: $update_command"
         $update_command
